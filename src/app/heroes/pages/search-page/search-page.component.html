@@ -1,0 +1,24 @@
+<div class="flex flex-column p-2">
+  <h3>buscador</h3>
+  <mat-form-field>
+    <mat-label>Buscador de herores</mat-label>
+    <input type="text" matInput [formControl]="searchInput" (input)="searchHero()" [matAutocomplete]="autoHero">
+    <mat-autocomplete
+    #autoHero="matAutocomplete"
+    (optionSelected)="onSelectedOption($event)"
+    >
+      @if(heroes.length === 0){
+        <mat-option> No se encontro <b>{{searchInput.value}}</b></mat-option>
+      }
+      @else{
+        @for (hero of heroes; track $index) {
+          <mat-option [value]="hero">{{hero.superhero}}</mat-option>
+        }
+      }
+
+    </mat-autocomplete>
+
+  </mat-form-field>
+
+  {{selectedHero | json}}
+</div>

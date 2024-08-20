@@ -1,0 +1,36 @@
+@if(hero){
+<div class="grid">
+  <div class="col-12">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{hero.alter_ego}}</mat-card-title>
+        <mat-card-subtitle>{{hero.superhero}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="hero | heroImage" [alt]="hero.superhero" style="max-width: 200px;">
+
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>{{hero.first_appearance}}</mat-list-item>
+          <mat-list-item>{{hero.characters}}</mat-list-item>
+          <mat-list-item>{{hero.publisher}}</mat-list-item>
+          <mat-list-item>{{hero.alter_ego}}</mat-list-item>
+        </mat-list>
+        <button
+        mat-button
+        color="warn"
+        (click)="goBack()"
+        >
+        <mat-icon>arrow_back</mat-icon>
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+}
+@else{
+<div class="flex justify-content-center align-items-center" style="height: 100vh">
+  <mat-spinner></mat-spinner>
+</div>
+
+}
