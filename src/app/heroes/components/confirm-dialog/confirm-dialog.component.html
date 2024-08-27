@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>¿Desea eliminar?<h1>
+<div mat-dialog-content>
+  <p> Este proceso no es reversible, esta a punto de eliminar a
+    <strong>{{data.superhero}}</strong>
+  </p>
+</div>
+<div mat-dialog-actions class="flex justify-content-end flex-wrap">
+    <button mat-button (click)="onNoClick()">No</button>
+    <button mat-button color="primary" (click)="onConfirm()">Ok</button>
+</div>
